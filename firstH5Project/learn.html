@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>常见块级标签</title>
+    </head>
+    <body>
+		
+        <!--h1最大，h6最小。自动加粗-->
+        <h1>h1标题标签</h1>
+        <h2>h2标题标签</h2>
+        <h3>h3标题标签</h3>
+        <h4>h4标题标签</h4>
+        <h5>h5标题标签</h5>
+        <h6>h6标题标签</h6>
+        <hr />
+        <p>这是段落标签:<p/>
+        <p>这是<br/>段落标签,水平线标签和换行标签这种中间不含内容的标签,都是自闭和<p/>
+        <p>标题标签和段落标签都有俩</p>
+        <!--引用标签-->
+        <!--cite表示引用来源，这里面一般写网址-->
+        <blockquote cite="http://www.jredu100.com">blockquote引用标签</blockquote>
+        <!--预格式标签
+            浏览器默认显示样式：
+            1.显示等宽字体（里面的回车，空格都好使）
+            2.代码中换行空格等元素在浏览器中都好使（可直接显示）
+        -->
+        <pre>1.显示    等宽字体
+        2.代码中换行空格等元素&nbsp;在浏览器中都好使</pre>
+        <!--&nbsp;不建议用，因为每个浏览器对空格大小表现不一样-->
+        
+        <a name="top"></a>
+        <!--有序列表-->
+        <ol>
+            <!--列表项-->
+            <li>第一项</li>
+            <li>第二项</li>
+            <li>第三项</li>
+        </ol>
+        
+        <!--无序列表-->
+        <ul>
+            <li>第一项</li>
+            <li>第二项</li>
+            <li>第三项</li>
+        </ul>
+        <!--定义列表-->
+        <!--标题顶格写，描述项对标题进行缩进显示-->
+        <dl>
+            <dt>标题</dt>
+            <dd>
+                描述1
+            </dd>
+            <dd>
+                描述2
+            </dd>
+        </dl>
+          <!--组合标签：<figure></figure>用于显示图片及图片标题
+              两个子标签：<img/>
+                         <figcaption>这是图片标题</figcaption>
+                         显示效果：图片下面一个标题，且俩都缩进。
+          -->
+        <figure>
+            <img src="./img/icon.png"/>
+            <figcaption>这是图片标题</figcaption>
+        </figure>
+        <!--分区标签-->
+        <div  >这是一个Div</div>
+		
+		
+		<!--第二部分-->
+        <!--span(文本)无实际意义，用于包裹某部分内容，修改特别样式-->
+        <span style="color:red;font-size: 36px;">Span</span>
+        <br /><!--em（强调）-->
+        <em>这是em中的标签</em>
+        <br /><!--i（倾斜）-->
+        <i>这是i中的标签</i>
+        <br /><!--strong（强调）-->    
+        <strong>这是strong中的标签</strong>
+        <br /><!--b(加粗)-->
+        <b>这是b中的标签</b>
+        <br /><!--q（短引用）-->    
+        <q cite="http://www.jredu100.com">这是短引用中的标签</q>
+        <br /><!--small（缩小字体）-->
+        <small>这是small中的标签</small>
+        <br />
+        <big>这是big中的标签</big>
+        <br />
+        <!--img(图片)-->    
+        <!--<img src="file:///E:/icon.png"/>绝对路径，不建议-->
+        <!--<img src="../img/icon.png"/>上一级文件夹内部    -->
+        <!--<img src="icon.png" /><!--同级-->-->
+        <img src="img/icon.png"/><!--同级文件夹内部-->
+        <a name="you"></a>
+		<br />
+        <img src="img/icon.png" height="20px" width="15px"/>
+		<br />
+
+        <img src="img/icon.png" title="这是图片" alt="图片不显示"/>    
+        <br />
+        <!--a（超链接）-->    
+        <!--本地文件也可以用-->
+        <!--href-->
+        <!--target（用来表示打开页面的位置）:_self自身（默认）,_blank新页面打开-->
+        <!--title=“”鼠标指上去看到的文字；-->
+        <a href="http://www.jredu100.com" target="_blank" title="这是一个超链接">这是一个超链接</a>
+		<br />
+
+        <a href="#top" target="_self">跳转到指定位置</a>
+		<br />
+
+        <a href="mailto://jianghao@jerei.com" target="_self">给指定邮箱发送邮件</a> 
+    </body>
+</html>

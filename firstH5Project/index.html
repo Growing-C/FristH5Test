@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Hello World</title>
+	</head>
+	<body>
+		
+	</body>
+</html>-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+    <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>监测浏览器是否支持html5</title>
+
+
+    <link rel="stylesheet" href="css/test.css" type="text/css" />
+
+    <style>
+        body {
+
+            font-size: 12px;
+        }
+
+        canvas {
+
+            border: 1px solid #ccc;
+
+            background: #ffd800;
+        }
+
+        img {
+            /* //这些参数都是string */
+            width: 200px;
+            height: 200px; 
+            left: 0px;
+            top: 0px;
+
+            background: #ffd800;
+            position: relative;
+        }
+
+        /* .ceshi {font-size:14px; color:#FF0000;}  */
+    </style>
+
+
+    <script type="text/javascript" charset="utf-8">
+        function clickToApp() {
+            window.location.href = "error.html";
+
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="ceshi">我是div css测试内容www.divcss5.com支持</div> 
+
+    <img src="img/icon.png" alt="" />
+    <button onclick="clickToApp()">跳转到app指定页面</button>
+    <!--<%--浏览器支持的话会出现一个矩形，不支持的话会出现下面那句话--%>-->
+    <br />
+    <canvas id="mycanvas" width="200" height="200">
+
+        当前浏览器不支持全新的画布标签
+
+    </canvas>
+    <br />
+
+    <figure>
+        <img src="./img/icon.png" />
+        <figcaption>这是图片标题</figcaption>
+    </figure>
+
+
+    <script>
+        'use strict';
+        document.getElementsByTagName('img')[0].onclick = function (eve) {
+            eve = window.event || eve;
+            var afterLeft = 0;
+            var afterTop = 0;
+
+            if (this.style.left == null || this.style.left == "") {
+                this.style.left = 0;
+                this.style.top = 0;
+            }
+
+            console.log('center left:');
+            console.log(parseInt(this.style.left) + 100);
+            console.log('center  top:');
+            console.log(parseInt(this.style.top) + 100);
+
+            console.log('eve.pageX:' + eve.pageX + '   eve.pageY:' + eve.pageY);
+
+            if (parseInt(this.style.left) + 100 > eve.pageX) { //点击在图片中心左边
+                afterLeft = eve.pageX + 10 + 'px';
+            } else {
+                afterLeft = eve.pageX - 200 - 10 + 'px';
+            }
+            if (parseInt(this.style.top) + 100 > eve.pageY) {
+                afterTop = eve.pageY + 10 + 'px';
+            } else {
+                afterTop = eve.pageY - 200 - 10 + 'px';
+            }
+            this.style.left = afterLeft;
+            this.style.top = afterTop;
+            console.log('afterLeft:' + this.style.left + '   afterTop:' + this.style.top);
+            console.log(eve);
+            // alert('别碰我');
+        }
+    </script>
+
+    <script type="text/javascript">
+        'use strict';
+        1;
+        console.log("dgfg");
+        // 						var date=new Date();
+        // 						alert(date.get"ff");
+        // 		        confirm("test confirm");
+        // window.alert("1232");
+        // window.confirm("关闭？");
+        console.log(window.navigator.appVersion);
+        console.log("height" + window.screen.height);
+        console.log("width" + window.screen.width);
+        // window.open('http://www.imooc.com', '_blank',
+        // 'width=300,height=200,menubar=no,toolbar=no, status=no,scrollbars=yes')
+    </script>
+
+    <!--AJAX-->
+    <script>
+        console.log(window.XMLHttpRequest);
+        console.log(window.ActiveXObject); //undifined 不支持
+        console.log('jQuery版本：' + $.fn.jquery);
+        console.log('appName = ' + navigator.appName);
+        console.log('appVersion = ' + navigator.appVersion);
+        console.log('language = ' + navigator.language);
+        console.log('platform = ' + navigator.platform);
+        console.log('userAgent = ' + navigator.userAgent);
+    </script>
+    <br />
+    <script type="text/javascript" src="src/test.js"></script>
+</body>
+
+</html>
