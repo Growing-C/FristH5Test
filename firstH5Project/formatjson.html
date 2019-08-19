@@ -63,7 +63,28 @@
             position: absolute;
             top: 0;
             left: 0;
-            bottom: 200px;
+            bottom:450px;
+            right: 0;
+        }
+
+        .btnFormat {
+            width: 100px;
+            height: 50px;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 300px;
+            right: 0;
+        }
+        .btnAddTransfer {
+            width: 100px;
+            height: 50px;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 150px;
             right: 0;
         }
     </style>
@@ -91,6 +112,10 @@
 
         <div class="divCenter">
             <button class="btnTrans" onClick="formatJson()">TransformJson</button>
+
+            <button class="btnFormat" onClick="removeTransfer()">removeTransfer</button>
+            
+            <button class="btnAddTransfer" onClick="addTransfer()">addTransfer</button>
             <!-- clear 貌似是js保留的字段，onclick用clear无效 -->
             <button class="btnClear" onClick="clearJs()">Clear</button>
         </div>
@@ -108,6 +133,48 @@
     <!--格式化后的json写入的位置-->
     <!-- <div id="writePlace"></div> -->
     <script>
+        // 添加转义\
+        function addTransfer(json, options) {
+            var formatted = '';
+
+            json = document.getElementById("rawJson").value;
+
+            if (typeof json == "undefined" || json == null || json == "") {
+                alert("请输入json");
+                return;
+            }
+
+            formatted = json.replace(new RegExp('\"', "g"), '\\"');
+
+            document.getElementById("rawJson").value = formatted;
+
+        };
+        
+        //去除转义,已经用原生方式写好了不需要改动,直接引用就好
+        function removeTransfer(json, options) {
+            var formatted = '';
+
+            json = document.getElementById("rawJson").value;
+
+            if (typeof json == "undefined" || json == null || json == "") {
+                alert("请输入json");
+                return;
+            }
+            // var str = '我是的生长在\\南方的纯正\\人';
+            // var reg = new RegExp( '\\\\' , "g" );
+            // alert(str);
+            // var newstr = str.replace( reg ,"" );
+            // alert(newstr);
+
+            // <!-- 要去除转义必须用 四个斜杠，两个不行，不明原因 -->
+            formatted = json.replace(new RegExp('\\\\', "g"), '');
+
+            //  alert(formatted);
+
+            document.getElementById("rawJson").value = formatted;
+
+        };
+        
         //格式化代码函数,已经用原生方式写好了不需要改动,直接引用就好
         function formatJson(json, options) {
             var reg = null,
